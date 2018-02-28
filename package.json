@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/XIAOGUIGUI/koa2-pwa-notice#readme",
   "dependencies": {
+    "ip": "^1.1.5",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.4.0",
-    "log4js": "^2.5.3"
+    "log4js": "^2.5.3",
+    "nodemon": "^1.15.1"
   }
 }
