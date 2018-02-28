@@ -4,6 +4,7 @@
   "description": "pwa notice server  by koa2",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +22,12 @@
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.4.0",
+    "lodash": "^4.17.5",
     "log4js": "^2.5.3",
+    "mongoose": "^5.0.7",
+    "node-gcm": "^0.14.10"
+  },
+  "devDependencies": {
     "nodemon": "^1.15.1"
   }
 }

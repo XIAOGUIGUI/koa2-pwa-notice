@@ -1,8 +1,11 @@
 const ip = require('ip')
+const path = require('path')
 const bodyParser = require('koa-bodyparser')
 const log = require('./log')
 const httpError = require('./http-error')
-const miSend = require('./mi-send')
+const send = require('./send')
+const router = require('./router')
+// 可以自动加载所有的中间件，再去app.js调用
 module.exports = app => {
   app.use(httpError())
   app.use(log({
@@ -13,5 +16,23 @@ module.exports = app => {
     serverIp: ip.address()
   }))
   app.use(bodyParser())
-  app.use(miSend())
+  app.use(send())
+  app.use(router({
+    app,
+    path: path.join(__dirname, '../controller')
+  }))
+  // rule({
+  //   app,
+  //   rules: [
+  //     {
+  //       path: path.join(__dirname, '../controller'),
+  //       name: 'controller'
+  //     },
+  //     {
+  //       path: path.join(__dirname, '../service'),
+  //       name: 'service'
+  //     }
+  //   ]
+  // })
+  // console.log(app.controller)
 }
