@@ -2,9 +2,11 @@
   "name": "koa2-pwa-notice",
   "version": "1.0.0",
   "description": "pwa notice server  by koa2",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
+    "pm2": "pm2 start app.js --name 'koa2-pwa-notice'",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
