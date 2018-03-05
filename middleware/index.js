@@ -19,10 +19,10 @@ module.exports = app => {
   }))
   app.use(bodyParser())
   app.use(send())
-  app.use(router({
+  router({
     app,
     path: path.join(__dirname, '../controller')
-  }))
+  })
   // rule({
   //   app,
   //   rules: [

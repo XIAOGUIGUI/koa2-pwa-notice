@@ -3,7 +3,6 @@ const fs = require('fs')
 const router = require('koa-router')()
 const method = 'get'
 module.exports = (options) => {
-  return async function(ctx, next) {
     let { app, path = ''} = options
     if (!app) {
       throw new Error('router: the app params is necessary!')
@@ -33,16 +32,12 @@ module.exports = (options) => {
             method: exportFuncs[ctrlname].__method__ || method
           }
           let path = getRouterPath(exportFuncs[ctrlname], config, ctrlname)
-          console.log(path)
-          console.log(result)
           router[result.method](path, result.ctrl)
         }
       }
     })
     app.use(router.routes())
       .use(router.allowedMethods())
-    await next()
-  }
 }
 function getRouterPath(data, config, ctrlname) {
   let path =  '/' + config.__name__
