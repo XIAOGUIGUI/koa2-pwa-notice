@@ -5,8 +5,10 @@ const log = require('./log')
 const httpError = require('./http-error')
 const send = require('./send')
 const router = require('./router')
+const cors = require('koa2-cors')
 // 可以自动加载所有的中间件，再去app.js调用
 module.exports = app => {
+  app.use(cors())
   app.use(httpError())
   app.use(log({
     env: app.env,

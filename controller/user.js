@@ -14,7 +14,7 @@ exports.login = async(ctx, next) => {
 exports.login.__name__ = ''
 // 用户注册
 exports.register = async(ctx, next) => {
-  let { id } = ctx.request.body
+  let { name, password } = ctx.request.body
   let data = await userService.register(name, password)
   ctx.response.body = data
 }
@@ -24,7 +24,10 @@ exports.subscribe = async(ctx, next) => {
   let { id } = ctx.request.body
   let data = await userService.createNewUser(id).catch(err => {
     ctx.log.error(err.message);
-    ctx.throw(500, '服务器内部错误')
+    ctx.response.body = {
+      code: 1,
+      msg: err.message
+    }
   })
   ctx.response.body = {
     code: 0,
@@ -36,7 +39,10 @@ exports.unsubscribe = async(ctx, next) => {
   let { id } = ctx.request.body
   let data = await userService.deleteOneUser(id).catch(err => {
     ctx.log.error(err.message);
-    ctx.throw(500, '服务器内部错误')
+    ctx.response.body = {
+      code: 1,
+      msg: err.message
+    }
   })
   ctx.response.body = {
     code: 0,

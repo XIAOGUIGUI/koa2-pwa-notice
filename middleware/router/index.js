@@ -33,6 +33,8 @@ module.exports = (options) => {
             method: exportFuncs[ctrlname].__method__ || method
           }
           let path = getRouterPath(exportFuncs[ctrlname], config, ctrlname)
+          console.log(path)
+          console.log(result)
           router[result.method](path, result.ctrl)
         }
       }

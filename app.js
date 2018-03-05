@@ -9,5 +9,5 @@ mongoose.Promise = Promise;
 mongoose.connect(config.mongodb.url, config.mongodbSecret);
 mongoose.connection.on('error', console.error);
 app.listen(3001, () => {
-  console.log('server is running at http://localhost:3000')
+  console.log('server is running at http://localhost:3001')
 })

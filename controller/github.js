@@ -4,7 +4,7 @@ exports.controllerConfig = {
   __name__: ''
 }
 exports.index = async(ctx, next) => {
-  ctx.response.body = `<h1>index page</h1>`
+  ctx.response.body = `<h1>index page1</h1>`
 }
 exports.index.__name__ = ''
 exports.notifyUsers = async(ctx, next) => {
