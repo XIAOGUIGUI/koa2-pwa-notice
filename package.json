@@ -1,0 +1,35 @@
+{
+  "name": "koa2-pwa-notice",
+  "version": "1.0.0",
+  "description": "pwa notice server  by koa2",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "pm2": "pm2 start app.js --name 'koa2-pwa-notice'",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XIAOGUIGUI/koa2-pwa-notice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XIAOGUIGUI/koa2-pwa-notice/issues"
+  },
+  "homepage": "https://github.com/XIAOGUIGUI/koa2-pwa-notice#readme",
+  "dependencies": {
+    "ip": "^1.1.5",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.5",
+    "log4js": "^2.5.3",
+    "mongoose": "^5.0.7",
+    "node-gcm": "^0.14.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.1"
+  }
+}
